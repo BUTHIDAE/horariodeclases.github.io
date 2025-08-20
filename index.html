@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Horario de Clases</title>
+    <!-- Incluye la biblioteca de Tailwind CSS para un diseño moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Usa la fuente Inter para una tipografía limpia y legible -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+
+        /* Estilos personalizados para el modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 50;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            transform: scale(0.9);
+            opacity: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+            max-width: 90%;
+            width: 500px;
+        }
+
+        .modal-content.active {
+            transform: scale(1);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-4 sm:p-8">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-3xl shadow-2xl p-6 sm:p-10">
+        <header class="text-center mb-10">
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-blue-800 mb-2">Mi Horario</h1>
+            <p class="text-lg sm:text-xl text-gray-600 font-medium">Segundo Semestre 2025</p>
+            <p class="text-sm text-gray-400 mt-1">HCM Horario</p>
+        </header>
+
+        <main class="grid gap-6 sm:gap-8">
+            <!-- Clase 1: Estadística Básica -->
+            <section class="class-card bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-2xl p-6 shadow-lg cursor-pointer transform transition-transform hover:scale-105 hover:shadow-2xl"
+                data-titulo="Estadística Básica - EST 2110-05"
+                data-creditos="5.000"
+                data-horario="Lunes y miércoles de 4:00 PM - 6:50 PM"
+                data-lugar="FACULTAD DE HUMANIDADES 010"
+                data-profesor="Alberto Estrella Contreras"
+                data-periodo="Segundo Semestre 2025"
+                data-nrc="37002"
+                data-status="Inscrito por Web en Jul 18, 2025"
+                data-calificar="Calificación Estandar"
+                data-metodo="Presencial"
+                data-nivel="Grado"
+                data-campus="UASD-Santo Domingo">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                    <h2 class="text-2xl font-bold">Estadística Básica - EST 2110-05</h2>
+                    <span class="bg-white text-blue-600 text-xs font-semibold px-3 py-1 rounded-full mt-2 sm:mt-0 shadow-inner">
+                        5.000 Créditos
+                    </span>
+                </div>
+                <div class="space-y-3 text-sm">
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        <strong class="font-medium">Horario:</strong> Lunes y miércoles de 4:00 PM - 6:50 PM
+                    </p>
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <strong class="font-medium">Lugar:</strong> FACULTAD DE HUMANIDADES 010
+                    </p>
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                        <strong class="font-medium">Profesor:</strong> Alberto Estrella Contreras
+                    </p>
+                </div>
+            </section>
+            
+            <!-- Clase 2: Lenguaje de Programación II -->
+            <section class="class-card bg-gradient-to-r from-teal-500 to-cyan-600 text-white rounded-2xl p-6 shadow-lg cursor-pointer transform transition-transform hover:scale-105 hover:shadow-2xl"
+                data-titulo="Lenguaje de Programación II - INF 5140-207"
+                data-creditos="4.000"
+                data-horario="Jueves de 8:00 PM - 9:50 PM"
+                data-lugar="LABORATORIO DE INFORMATICA 108"
+                data-profesor="Julio Castro Ortiz"
+                data-periodo="Segundo Semestre 2025"
+                data-nrc="31623"
+                data-status="Inscrito por Web en Jul 18, 2025"
+                data-calificar="Calificación Estandar"
+                data-metodo="Semi Presencial"
+                data-nivel="Grado"
+                data-campus="UASD-Santo Domingo">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                    <h2 class="text-2xl font-bold">Lenguaje de Programación II - INF 5140-207</h2>
+                    <span class="bg-white text-teal-600 text-xs font-semibold px-3 py-1 rounded-full mt-2 sm:mt-0 shadow-inner">
+                        4.000 Créditos
+                    </span>
+                </div>
+                <div class="space-y-3 text-sm">
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        <strong class="font-medium">Horario:</strong> Jueves de 8:00 PM - 9:50 PM
+                    </p>
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <strong class="font-medium">Lugar:</strong> LABORATORIO DE INFORMATICA 108
+                    </p>
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                        <strong class="font-medium">Profesor:</strong> Julio Castro Ortiz
+                    </p>
+                </div>
+            </section>
+
+            <!-- Clase 3: Lab de Lenguaje de Programación II -->
+            <section class="class-card bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-2xl p-6 shadow-lg cursor-pointer transform transition-transform hover:scale-105 hover:shadow-2xl"
+                data-titulo="Lab de Lenguaje de Program II-INF 5150-08"
+                data-creditos="1.000"
+                data-horario="Lunes de 8:00 PM - 9:50 PM"
+                data-lugar="LABORATORIO DE INFORMATICA 102"
+                data-profesor="Romery Alberto Monegro"
+                data-periodo="Segundo Semestre 2025"
+                data-nrc="31625"
+                data-status="Inscrito por Web en Jul 18, 2025"
+                data-calificar="Calificación Estandar"
+                data-metodo="Presencial"
+                data-nivel="Grado"
+                data-campus="UASD-Santo Domingo">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                    <h2 class="text-2xl font-bold">Lab de Lenguaje de Program II-INF 5150-08</h2>
+                    <span class="bg-white text-purple-600 text-xs font-semibold px-3 py-1 rounded-full mt-2 sm:mt-0 shadow-inner">
+                        1.000 Créditos
+                    </span>
+                </div>
+                <div class="space-y-3 text-sm">
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        <strong class="font-medium">Horario:</strong> Lunes de 8:00 PM - 9:50 PM
+                    </p>
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <strong class="font-medium">Lugar:</strong> LABORATORIO DE INFORMATICA 102
+                    </p>
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                        <strong class="font-medium">Profesor:</strong> Romery Alberto Monegro
+                    </p>
+                </div>
+            </section>
+
+            <!-- Clase 4: Estructura de Datos -->
+            <section class="class-card bg-gradient-to-r from-red-500 to-orange-600 text-white rounded-2xl p-6 shadow-lg cursor-pointer transform transition-transform hover:scale-105 hover:shadow-2xl"
+                data-titulo="Estructura De Datos INF 5260-201"
+                data-creditos="3.000"
+                data-horario="Lunes de 6:00 PM - 7:50 PM"
+                data-lugar="LABORATORIO DE INFORMATICA 102"
+                data-profesor="Silverio Del Orbe Abad"
+                data-periodo="Segundo Semestre 2025"
+                data-nrc="25930"
+                data-status="Inscrito por Web en Jul 18, 2025"
+                data-calificar="Calificación Estandar"
+                data-metodo="Semi Presencial"
+                data-nivel="Grado"
+                data-campus="UASD-Santo Domingo">
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+                    <h2 class="text-2xl font-bold">Estructura De Datos INF 5260-201</h2>
+                    <span class="bg-white text-red-600 text-xs font-semibold px-3 py-1 rounded-full mt-2 sm:mt-0 shadow-inner">
+                        3.000 Créditos
+                    </span>
+                </div>
+                <div class="space-y-3 text-sm">
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                        <strong class="font-medium">Horario:</strong> Jueves de 6:00 PM - 7:50 PM
+                    </p>
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <strong class="font-medium">Lugar:</strong> LABORATORIO DE INFORMATICA 102
+                    </p>
+                    <p class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                        <strong class="font-medium">Profesor:</strong> Silverio Del Orbe Abad
+                    </p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="mt-10 text-center text-sm text-gray-500">
+            <p>Datos extraídos de su documento PDF. NRC: 37002, 31623, 31625, 25930</p>
+            <p>Total de créditos: 13.000</p>
+        </footer>
+    </div>
+
+    <!-- Modal para mostrar la información ampliada de las clases -->
+    <div id="class-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            <h3 id="modal-titulo" class="text-3xl font-extrabold text-blue-800 mb-4"></h3>
+            <div class="space-y-4 text-gray-700">
+                <p><strong>Créditos:</strong> <span id="modal-creditos"></span></p>
+                <p><strong>Periodo:</strong> <span id="modal-periodo"></span></p>
+                <p><strong>NRC:</strong> <span id="modal-nrc"></span></p>
+                <p><strong>Estatus:</strong> <span id="modal-status"></span></p>
+                <p><strong>Instructor:</strong> <span id="modal-profesor"></span></p>
+                <p><strong>Método de Calificación:</strong> <span id="modal-calificar"></span></p>
+                <p><strong>Método Educativo:</strong> <span id="modal-metodo"></span></p>
+                <p><strong>Nivel:</strong> <span id="modal-nivel"></span></p>
+                <p><strong>Campus:</strong> <span id="modal-campus"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const classCards = document.querySelectorAll('.class-card');
+            const modal = document.getElementById('class-modal');
+            const modalContent = modal.querySelector('.modal-content');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            // Función para abrir el modal con la información de la clase
+            function openModal(card) {
+                // Rellenar el modal con los datos del 'data-*' de la tarjeta
+                document.getElementById('modal-titulo').textContent = card.dataset.titulo;
+                document.getElementById('modal-creditos').textContent = card.dataset.creditos;
+                document.getElementById('modal-periodo').textContent = card.dataset.periodo;
+                document.getElementById('modal-nrc').textContent = card.dataset.nrc;
+                document.getElementById('modal-status').textContent = card.dataset.status;
+                document.getElementById('modal-profesor').textContent = card.dataset.profesor;
+                document.getElementById('modal-calificar').textContent = card.dataset.calificar;
+                document.getElementById('modal-metodo').textContent = card.dataset.metodo;
+                document.getElementById('modal-nivel').textContent = card.dataset.nivel;
+                document.getElementById('modal-campus').textContent = card.dataset.campus;
+                
+                // Mostrar el modal y activar la animación
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modalContent.classList.add('active');
+                }, 10);
+            }
+
+            // Función para cerrar el modal
+            function closeModal() {
+                modalContent.classList.remove('active');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 300);
+            }
+
+            // Añadir el evento click a cada tarjeta
+            classCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    openModal(card);
+                });
+            });
+
+            // Añadir eventos para cerrar el modal
+            closeModalBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target.id === 'class-modal') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
